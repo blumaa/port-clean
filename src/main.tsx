@@ -44,7 +44,11 @@ root.render(
   </StrictMode>,
 )
 
-// Remove the loader once fonts are ready
-document.fonts.ready.then(() => {
+// Remove the loader once Inter is loaded
+Promise.all([
+  document.fonts.load('400 1em Inter'),
+  document.fonts.load('500 1em Inter'),
+  document.fonts.load('600 1em Inter'),
+]).then(() => {
   document.getElementById('loader')?.remove()
 })
