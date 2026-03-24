@@ -1,0 +1,458 @@
+/* ============================================
+   port-clean — Minimalist Portfolio
+   Matching boucksy.com design exactly
+   ============================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-muted: #666666;
+  --color-border: #e0e0e0;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --max-width: 60rem;
+  --nav-height: 5.625rem;
+  --col-left: 11rem;
+  --col-gap: 3rem;
+
+  /* Animation component compatibility tokens */
+  --color-background-alt: #f5f4f1;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #666666;
+  --color-text-muted: #999999;
+  --color-surface: #ffffff;
+  --color-border-light: #e0e0e0;
+  --color-accent: #4a235a;
+  --space-1: 0.25rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --radius-full: 9999px;
+  --transition-fast: 0.15s ease;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --font-medium: 500;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.6rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================
+   Header & Navigation
+   ============================================ */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background-color: var(--color-bg);
+  height: var(--nav-height);
+}
+
+nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.nav-logo:hover {
+  opacity: 0.6;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--color-muted);
+  transition: color 0.2s, opacity 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 0.6;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.nav-links a.active {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ============================================
+   Main Layout
+   ============================================ */
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: calc(var(--nav-height) + 2.5rem) 2rem 6rem;
+}
+
+/* ============================================
+   Home Page
+   ============================================ */
+
+.home-bio {
+  max-width: 42.5rem;
+}
+
+.home-bio p {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.home-bio p:last-of-type {
+  margin-bottom: 0;
+}
+
+.home-bio a {
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+
+.home-bio a:hover {
+  opacity: 0.5;
+}
+
+.entry-title a {
+  font-weight: 400;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.entry-title a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.5;
+}
+
+/* ============================================
+   Sections
+   ============================================ */
+
+section {
+  margin-bottom: 4rem;
+}
+
+section:last-child {
+  margin-bottom: 0;
+}
+
+section > h2 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+  padding-bottom: 0.75rem;
+}
+
+/* Two-column grid */
+
+.experience-entry,
+.list-entry {
+  display: grid;
+  grid-template-columns: var(--col-left) 1fr;
+  gap: 0 var(--col-gap);
+}
+
+.experience-entry.single-col {
+  display: block;
+}
+
+.experience-entry {
+  margin-bottom: 2.5rem;
+}
+
+.experience-entry:last-child {
+  margin-bottom: 0;
+}
+
+.list-entry {
+  margin-bottom: 0.85rem;
+  line-height: 1.5rem;
+}
+
+.list-entry:last-child {
+  margin-bottom: 0;
+}
+
+/* Left column */
+
+.entry-meta {
+  padding-top: 0.1rem;
+}
+
+.entry-date,
+.entry-company,
+.list-date {
+  font-size: 1rem;
+  color: var(--color-muted);
+}
+
+.entry-date {
+  line-height: 1.5rem;
+  white-space: nowrap;
+}
+
+.entry-company {
+  margin-top: 0.15rem;
+}
+
+.list-date {
+  padding-top: 0.1rem;
+}
+
+/* Right column */
+
+.entry-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  line-height: 1.3rem;
+}
+
+.entry-bullets {
+  list-style: none;
+  padding: 0;
+}
+
+.entry-bullets li,
+.entry-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.65rem;
+}
+
+.entry-bullets li {
+  margin-bottom: 0.5rem;
+}
+
+.entry-description {
+  margin-top: 0.4rem;
+}
+
+/* Grouped roles */
+
+.entry-roles {
+  list-style: none;
+  margin-bottom: 0.5rem;
+}
+
+.entry-roles li {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  line-height: 1.7rem;
+  font-weight: 500;
+}
+
+.entry-roles .role-title {
+  color: var(--color-text);
+}
+
+/* Shared small muted label */
+
+.list-content .sub {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+/* ============================================
+   Work Page — Project Links
+   ============================================ */
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.project-links a {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.project-links a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.5;
+}
+
+/* ============================================
+   Animation Gallery
+   ============================================ */
+
+.animation-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.animation-card {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.animation-card-content {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.animation-card-content svg {
+  width: 100%;
+  height: 100%;
+}
+
+.animation-card-label {
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  border-top: 1px solid var(--color-border);
+}
+
+/* ============================================
+   TV Page
+   ============================================ */
+
+.tv-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.tv-container {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* ============================================
+   Back Link
+   ============================================ */
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+
+.back-link:hover {
+  opacity: 0.5;
+}
+
+/* ============================================
+   Not Found
+   ============================================ */
+
+.not-found {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.not-found h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.not-found a {
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (min-width: 43.75em) {
+  .animation-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 64em) {
+  .animation-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 43.75em) {
+  main {
+    padding-top: calc(var(--nav-height) + 3rem);
+  }
+
+  .experience-entry,
+  .list-entry {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .entry-meta {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+  }
+
+  .entry-company::before {
+    content: '\00B7';
+    margin-right: 0.5rem;
+  }
+}

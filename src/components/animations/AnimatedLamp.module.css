@@ -1,0 +1,27 @@
+.container {
+  composes: centerContainer from '../../styles/shared.module.css';
+}
+
+.lampArm {
+  fill: none;
+  stroke: #2d3642;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lampHead {
+  fill: #2d3642;
+  stroke: #2d3642;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.lampBase {
+  fill: none;
+  stroke: #2d3642;
+  stroke-width: 20;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
