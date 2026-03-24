@@ -2,9 +2,6 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import { App } from './App'
-import '@fontsource/inter/400.css'
-import '@fontsource/inter/500.css'
-import '@fontsource/inter/600.css'
 import './styles.css'
 
 const router = createBrowserRouter([
@@ -47,5 +44,7 @@ root.render(
   </StrictMode>,
 )
 
-// Remove the HTML loader once React has mounted
-document.getElementById('loader')?.remove()
+// Remove the loader once fonts are ready
+document.fonts.ready.then(() => {
+  document.getElementById('loader')?.remove()
+})

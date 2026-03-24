@@ -3,12 +3,6 @@
    Matching boucksy.com design exactly
    ============================================ */
 
-/* Override @fontsource's font-display: swap to prevent font flash */
-@font-face {
-  font-family: 'Inter';
-  font-display: optional;
-}
-
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
