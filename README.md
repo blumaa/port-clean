@@ -22,7 +22,7 @@ Minimalist portfolio site for Aaron Blum. Built with React, TypeScript, and Vite
 
 ```
 bun run dev       # dev server
-npm run build     # production build
-npm run preview   # preview production build
-npx vitest run    # run tests
+bun run build     # production build
+bun run preview   # preview production build
+bun vitest run    # run tests
 ```

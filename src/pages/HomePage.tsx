@@ -17,7 +17,7 @@ function HomePage() {
         making the bridge between design and engineering as seamless as possible.
         And now I've got a whole team of ai agents working for me-- however,
         I refuse to compromise code quality for speed. I believe we can help
-        ai build and write code in solid, clean, and organizing ways.
+        ai build and write code in solid, clean, and organized ways.
       </p>
       <p>
         You can reach me at{' '}
