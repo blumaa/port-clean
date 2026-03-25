@@ -25,8 +25,8 @@ export const experiences: Experience[] = [
     endDate: 'Feb 2026',
     location: 'Remote / Leipzig',
     description:
-      'Web components + atomic design system = amazing developer experience (with flexibility, reusability, scalability, and consistency).',
-    achievements: [],
+      'Web components + Lit is an amazing dev experience. I really got to know the native browser elements, the shadow dom, builds, ci pipelines.',
+    achievements: [ 'Helped walk the design team through the creation of design tokens and to convert their design system to atomic design.'],
     techStack: ['Web Components', 'TypeScript', 'Lit', 'Storybook'],
     link: 'https://go.fluege.de/',
   },
@@ -42,7 +42,7 @@ export const experiences: Experience[] = [
     description:
       'JavaScript frontend (React and Next.js), Ruby on Rails backend. Coding to help automate the tasks of case managers who assisted employees in global mobility.',
     achievements: [
-      'Helped develop the Pluto design system',
+      'Helped develop the Pluto design system.',
     ],
     techStack: ['React', 'Next.js', 'TypeScript', 'Ruby on Rails'],
     link: 'https://localyze.com/',
@@ -59,7 +59,7 @@ export const experiences: Experience[] = [
     description:
       'Frontend coding to automate large scale health insurance applications.',
     achievements: [
-      'Honed animation skills',
+      'Honed animation skills.',
     ],
     techStack: ['React', 'GSAP', 'CSS Animations', 'TypeScript'],
     link: 'https://www.x-ion.de/',
@@ -77,9 +77,9 @@ export const experiences: Experience[] = [
     description:
       'Wrote, designed, and taught 10th, 11th, and 12th grade curriculum oriented towards racial and social justice.',
     achievements: [
-      'Helped over 1000 students learn English as a second language',
-      'Coordinated a team of 10 teachers',
-      'Boosted cultural relevance using 21st century apps and technology',
+      'Helped over 1000 students learn English as a second language.',
+      'Coordinated a team of 10 teachers.',
+      'Boosted cultural relevance using 21st century apps and technology.',
     ],
     link: 'https://south.mpls.k12.mn.us/',
   },

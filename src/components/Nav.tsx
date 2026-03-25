@@ -1,6 +1,19 @@
-import { NavLink } from 'react-router'
+import { useState, useEffect } from "react";
+import { NavLink } from "react-router";
+import { motion, AnimatePresence } from "framer-motion";
+import { AnimatedOctoDude } from "./animations/AnimatedOctoDude";
 
 function Nav() {
+  const [isOctoFullscreen, setIsOctoFullscreen] = useState(false);
+
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOctoFullscreen(false);
+    };
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, []);
+
   return (
     <nav>
       <NavLink to="/" className="nav-logo" end>
@@ -8,18 +21,60 @@ function Nav() {
       </NavLink>
       <ul className="nav-links">
         <li>
-          <NavLink to="/cv" className={({ isActive }) => isActive ? 'active' : ''}>
+          <div className='octo-button-wrapper'>
+            <button
+              className="octo-button"
+              onClick={() => setIsOctoFullscreen(true)}
+              aria-label="Open OctoDude animation"
+            >
+              <AnimatedOctoDude />
+            </button>
+          </div>
+        </li>
+        <li>
+          <NavLink
+            to="/cv"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             CV
           </NavLink>
         </li>
         <li>
-          <NavLink to="/work" className={({ isActive }) => isActive ? 'active' : ''}>
+          <NavLink
+            to="/work"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Work
           </NavLink>
         </li>
       </ul>
+
+      <AnimatePresence>
+        {isOctoFullscreen && (
+          <motion.div
+            className="octo-overlay"
+            data-testid="octo-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            onClick={() => setIsOctoFullscreen(false)}
+          >
+            <motion.div
+              className="octo-fullscreen"
+              initial={{ scale: 0.3, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.3, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <AnimatedOctoDude />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
-  )
+  );
 }
 
-export { Nav }
+export { Nav };

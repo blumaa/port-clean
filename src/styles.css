@@ -93,7 +93,7 @@ nav {
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   list-style: none;
 }
 
@@ -114,6 +114,41 @@ nav {
   color: var(--color-text);
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.octo-button-wrapper {
+  background: transparent;
+  overflow: visible;
+}
+
+.octo-button {
+  /* width: 30px; */
+  height: 50px;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  overflow: visible;
+  transition: transform 0.2s;
+  transform: translate(15px, -10px);
+}
+
+.octo-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+.octo-fullscreen {
+  width: 100%;
+  max-width: 400px;
+  cursor: default;
 }
 
 /* ============================================
