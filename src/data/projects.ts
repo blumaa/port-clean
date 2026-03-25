@@ -12,6 +12,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'missing-agent-2031',
+    name: 'Missing Agent 2031',
+    description:
+      'A narrative mystery game set in 2031. Built with React and deployed as a PWA and native iOS app via Capacitor.',
+    liveUrls: [{ name: 'play', url: 'https://missing-agent-2031.vercel.app/' }],
+    githubUrl: 'https://github.com/blumaa/missing-agent-2031',
+    appStoreUrl: 'https://apps.apple.com/us/app/missing-agent-2031/id6760582943',
+  },
+  {
     id: 'padel-point-berlin',
     name: 'Padel Point Berlin',
     description:
@@ -53,7 +62,7 @@ export const projects: Project[] = [
     description:
       'An arcade game built on a custom SVG rendering engine with GSAP-powered character animations, game state machine via useReducer, and a real-time leaderboard on Supabase. Deployed as a PWA and native iOS app via Capacitor.',
     appStoreUrl: 'https://apps.apple.com/app/id6760347219',
-    liveUrls: [{ name: 'Play', url: 'https://bird-poo.vercel.app/' }],
+    liveUrls: [{ name: 'play', url: 'https://bird-poo.vercel.app/' }],
     githubUrl: 'https://github.com/blumaa/bird-poo',
   },
   {

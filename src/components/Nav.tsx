@@ -21,12 +21,12 @@ function Nav() {
       </NavLink>
       <ul className="nav-links">
         <li>
-          <button
+          <div
             className="octo-button"
             aria-label="OctoDude"
           >
             <AnimatedOctoDude />
-          </button>
+          </div>
         </li>
         <li>
           <NavLink

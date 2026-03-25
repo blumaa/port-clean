@@ -43,14 +43,14 @@ function ProjectLinks({ project }: { project: typeof projects[number] }) {
   if (project.previewComponent === 'animation-gallery') {
     return (
       <div className="project-links">
-        <Link to="/animations">View Gallery</Link>
+        <Link to="/animations">view gallery</Link>
       </div>
     )
   }
   if (project.previewComponent === 'television') {
     return (
       <div className="project-links">
-        <Link to="/tv">View Television</Link>
+        <Link to="/tv">watch television</Link>
       </div>
     )
   }
