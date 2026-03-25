@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import styles from "./AnimatedOctoDude.module.css";
 
-export function AnimatedOctoDude() {
+export function AnimatedOctoDude({ isBuzzing = false }: { isBuzzing?: boolean }) {
   return (
     <div className={styles.container} style={{ overflow: "visible" }}>
       <svg
@@ -103,6 +103,10 @@ export function AnimatedOctoDude() {
         />
 
         {/* Octopus - centered at 80,80 (middle of 160x160 viewBox) */}
+        <motion.g
+          animate={{ x: isBuzzing ? [0, -3, 3, -2, 2, 0] : 0 }}
+          transition={{ duration: 0.4 }}
+        >
         <g transform="translate(40, 40)">
           <motion.g
             initial={{ y: -20 }}
@@ -222,6 +226,8 @@ export function AnimatedOctoDude() {
             </motion.g>
           </motion.g>
         </g>
+
+        </motion.g>
 
         {/* Bubbles in front of octopus */}
         <motion.circle
