@@ -195,6 +195,48 @@ main {
   opacity: 0.5;
 }
 
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  display: inline-flex;
+  color: var(--color-muted);
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  opacity: 0.6;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cv-download {
+  display: inline-flex;
+  color: var(--color-muted);
+  transition: opacity 0.2s;
+}
+
+.cv-download:hover {
+  opacity: 0.5;
+}
+
+.ai-blurb{
+  outline: 1px dashed gray;
+  border-radius: 5px;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 0.3rem 1rem;
+}
+
 /* ============================================
    Sections
    ============================================ */
