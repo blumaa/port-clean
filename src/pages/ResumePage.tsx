@@ -68,6 +68,22 @@ function ResumePage() {
       </section>
 
       <section>
+        <h2>Languages</h2>
+        <div className="list-entry">
+          <div className="list-date">English</div>
+          <div className="list-content">Native</div>
+        </div>
+        <div className="list-entry">
+          <div className="list-date">Spanish</div>
+          <div className="list-content">C1</div>
+        </div>
+        <div className="list-entry">
+          <div className="list-date">German</div>
+          <div className="list-content">B1</div>
+        </div>
+      </section>
+
+      <section>
         <h2>Skills</h2>
         {categories.map(([category, label]) => {
           const categorySkills = skills.filter((s) => s.category === category)
