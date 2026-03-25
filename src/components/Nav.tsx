@@ -21,15 +21,13 @@ function Nav() {
       </NavLink>
       <ul className="nav-links">
         <li>
-          <div className='octo-button-wrapper'>
-            <button
-              className="octo-button"
-              onClick={() => setIsOctoFullscreen(true)}
-              aria-label="Open OctoDude animation"
-            >
-              <AnimatedOctoDude />
-            </button>
-          </div>
+          <button
+            className="octo-button"
+            onClick={() => setIsOctoFullscreen(true)}
+            aria-label="Open OctoDude animation"
+          >
+            <AnimatedOctoDude />
+          </button>
         </li>
         <li>
           <NavLink

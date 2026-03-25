@@ -2,8 +2,7 @@ function HomePage() {
   return (
     <div className="home-bio">
       <p>
-        I'm a frontend developer based in Berlin who lives in that sweet spot
-        between design and engineering. I build design systems, React apps, and
+        I'm a frontend developer who lives in that sweet spot between design and engineering. I build design systems, apps, and
         SVG animations — aiming to create products that are accessible, logical,
         and actually make sense to use.
       </p>
@@ -15,9 +14,11 @@ function HomePage() {
       <p>
         I'm passionate about component-driven development, design tokens, and
         making the bridge between design and engineering as seamless as possible.
-        And now I've got a whole team of ai agents working for me-- however,
-        I refuse to compromise code quality for speed. I believe we can help
-        ai build and write code in solid, clean, and organized ways.
+      </p>
+      <p>
+        Now that it's 2026 I've got a whole team of AI agents working for me with some caveats.
+        I refuse to compromise code quality for speed.
+        AI s capable of writing code that is solid, tested, secure, and beautiful if we teach it well-- which is right up my pedagogical alley.
       </p>
       <p>
         You can reach me at{' '}
