@@ -1,10 +1,74 @@
+import { useRef } from "react";
 import { motion } from "framer-motion";
+import { gsap, useGSAP } from "../../lib/gsap";
 import styles from "./AnimatedOctoDude.module.css";
 
-export function AnimatedOctoDude({ isBuzzing = false }: { isBuzzing?: boolean }) {
+export function AnimatedOctoDude() {
+  const svgRef = useRef<SVGSVGElement>(null);
+  const octoRef = useRef<SVGGElement>(null);
+  const isFleeingRef = useRef(false);
+
+  useGSAP(() => {
+    const svg = svgRef.current;
+    const octo = octoRef.current;
+    if (!svg || !octo) return;
+
+    // SVG center in viewBox coordinates (160x160 viewBox)
+    const centerX = 80;
+    const centerY = 80;
+    const fleeRadius = 120; // distance in SVG units where octo starts reacting
+    const fleeMultiplier = 1; // how aggressively he flees
+
+    const handleMouseMove = (e: MouseEvent) => {
+      // Convert screen coords to SVG coords
+      const pt = svg.createSVGPoint();
+      pt.x = e.clientX;
+      pt.y = e.clientY;
+      const svgP = pt.matrixTransform(svg.getScreenCTM()?.inverse());
+
+      const dx = svgP.x - centerX;
+      const dy = svgP.y - centerY;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < fleeRadius) {
+        isFleeingRef.current = true;
+        const strength = (fleeRadius - distance) / fleeRadius;
+        const angle = Math.atan2(dy, dx);
+        const flee = strength * fleeRadius * fleeMultiplier;
+        const fleeX = -Math.cos(angle) * flee;
+        const fleeY = -Math.sin(angle) * flee;
+
+        gsap.to(octo, {
+          x: fleeX,
+          y: fleeY,
+          duration: 1.3,
+          ease: "power2.out",
+          overwrite: true,
+        });
+      } else if (isFleeingRef.current) {
+        // Mouse moved far away, return home
+        isFleeingRef.current = false;
+        gsap.to(octo, {
+          x: 0,
+          y: 0,
+          duration: 2.5,
+          ease: "power1.out",
+          overwrite: true,
+        });
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, { dependencies: [svgRef, octoRef] });
+
   return (
     <div className={styles.container} style={{ overflow: "visible" }}>
       <svg
+        ref={svgRef}
         viewBox="0 0 160 160"
         xmlns="http://www.w3.org/2000/svg"
         width="100%"
@@ -103,10 +167,7 @@ export function AnimatedOctoDude({ isBuzzing = false }: { isBuzzing?: boolean })
         />
 
         {/* Octopus - centered at 80,80 (middle of 160x160 viewBox) */}
-        <motion.g
-          animate={{ x: isBuzzing ? [0, -3, 3, -2, 2, 0] : 0 }}
-          transition={{ duration: 0.4 }}
-        >
+        <g ref={octoRef}>
         <g transform="translate(40, 40)">
           <motion.g
             initial={{ y: -20 }}
@@ -227,7 +288,7 @@ export function AnimatedOctoDude({ isBuzzing = false }: { isBuzzing?: boolean })
           </motion.g>
         </g>
 
-        </motion.g>
+        </g>
 
         {/* Bubbles in front of octopus */}
         <motion.circle

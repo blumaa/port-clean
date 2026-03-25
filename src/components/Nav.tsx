@@ -5,7 +5,6 @@ import { AnimatedOctoDude } from "./animations/AnimatedOctoDude";
 
 function Nav() {
   const [isOctoFullscreen, setIsOctoFullscreen] = useState(false);
-  const [isBuzzing, setIsBuzzing] = useState(false);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -14,11 +13,6 @@ function Nav() {
     window.addEventListener("keydown", handleEscape);
     return () => window.removeEventListener("keydown", handleEscape);
   }, []);
-
-  const handleOctoClick = () => {
-    setIsBuzzing(true);
-    setTimeout(() => setIsBuzzing(false), 400);
-  };
 
   return (
     <nav>
@@ -29,10 +23,9 @@ function Nav() {
         <li>
           <button
             className="octo-button"
-            onClick={handleOctoClick}
-            aria-label="Buzz OctoDude"
+            aria-label="OctoDude"
           >
-            <AnimatedOctoDude isBuzzing={isBuzzing} />
+            <AnimatedOctoDude />
           </button>
         </li>
         <li>
