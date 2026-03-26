@@ -2,7 +2,7 @@ function HomePage() {
   return (
     <div className="home-bio">
       <p>
-        I'm a frontend developer who lives in that sweet spot between design and engineering. I build design systems, comopnent libraries, web apps, and
+        I'm a frontend developer who lives in that sweet spot between design and engineering. I build design systems, compnent libraries, web apps, and
         SVG animations— aiming to create products that are accessible, inviting, and engage the user.
       </p>
       <p>
