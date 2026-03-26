@@ -37,15 +37,6 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/blumaa/berlin-demo-finder',
   },
   {
-    id: 'mond',
-    name: 'Mond Design System',
-    description:
-      'A monorepo housing 35+ accessible, themeable React components built with TypeScript and Design Tokens. Implements atomic design principles for maximum reusability and consistency.',
-    githubUrl: 'https://github.com/blumaa/mond-design-system',
-    npmUrl: 'https://www.npmjs.com/package/@mond-design-system/theme',
-    storybookUrl: 'https://mond-design-system-component-lib.vercel.app/',
-  },
-  {
     id: 'xclues',
     name: 'xClues games',
     description:
@@ -64,6 +55,15 @@ export const projects: Project[] = [
     appStoreUrl: 'https://apps.apple.com/app/id6760347219',
     liveUrls: [{ name: 'play', url: 'https://bird-poo.vercel.app/' }],
     githubUrl: 'https://github.com/blumaa/bird-poo',
+  },
+  {
+    id: 'mond',
+    name: 'Mond Design System',
+    description:
+      'A monorepo housing 35+ accessible, themeable React components built with TypeScript and Design Tokens. Implements atomic design principles for maximum reusability and consistency.',
+    githubUrl: 'https://github.com/blumaa/mond-design-system',
+    npmUrl: 'https://www.npmjs.com/package/@mond-design-system/theme',
+    storybookUrl: 'https://mond-design-system-component-lib.vercel.app/',
   },
   {
     id: 'animation-gallery',
