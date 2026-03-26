@@ -117,6 +117,7 @@ nav {
 
 .octo-button {
   height: 50px;
+  width: 50px;
   padding: 0;
   border: none;
   border-radius: 5px;
@@ -124,6 +125,12 @@ nav {
   overflow: visible;
   transition: transform 0.2s;
   transform: translate(15px, 10px);
+}
+
+.octo-skeleton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 .octo-overlay {
