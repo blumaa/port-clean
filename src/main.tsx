@@ -2,6 +2,9 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import { App } from './App'
+import '@fontsource/inter/400.css'
+import '@fontsource/inter/500.css'
+import '@fontsource/inter/600.css'
 import './styles.css'
 
 const router = createBrowserRouter([
@@ -43,12 +46,3 @@ root.render(
     <RouterProvider router={router} />
   </StrictMode>,
 )
-
-// Remove the loader once Inter is loaded
-Promise.all([
-  document.fonts.load('400 1em Inter'),
-  document.fonts.load('500 1em Inter'),
-  document.fonts.load('600 1em Inter'),
-]).then(() => {
-  document.getElementById('loader')?.remove()
-})

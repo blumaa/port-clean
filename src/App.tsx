@@ -1,5 +1,7 @@
+import { Suspense } from "react";
 import { Outlet, ScrollRestoration } from "react-router";
 import { Nav } from "./components/Nav";
+import { PageSkeleton } from "./components/Skeleton";
 import { Analytics } from "@vercel/analytics/react";
 
 function App() {
@@ -9,7 +11,9 @@ function App() {
         <Nav />
       </header>
       <main>
-        <Outlet />
+        <Suspense fallback={<PageSkeleton />}>
+          <Outlet />
+        </Suspense>
       </main>
       <Analytics />
       <ScrollRestoration />

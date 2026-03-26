@@ -488,6 +488,34 @@ section > h2 {
 }
 
 /* ============================================
+   Skeletons
+   ============================================ */
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+.skeleton {
+  background-color: var(--color-border);
+  border-radius: 4px;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-line {
+  height: 1rem;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.page-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 1rem;
+}
+
+/* ============================================
    Responsive
    ============================================ */
 
