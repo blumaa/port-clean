@@ -66,7 +66,7 @@ export const experiences: Experience[] = [
     endDate: "Feb 2022",
     location: "Remote / Hamburg",
     description: "Built products for health insurance company software",
-    achievements: ["Full stack development with Javascript and Ruby"],
+    achievements: ["Full stack development with Javascript and Ruby on Rails"],
     techStack: ["React", "Ruby on Rails", "TypeScript"],
     link: "https://www.x-ion.de/",
   },
