@@ -12,6 +12,18 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'xclues',
+    name: 'xClues games',
+    description:
+    'A connections-style puzzle game engine powering three domains (music, film, literature) from a single codebase. Features Zustand state management, TanStack Query caching, build-time SEO generation per domain, and the Mond Design System. Deployed as a PWA and native iOS app via Capacitor.',
+    liveUrls: [
+      { name: 'musiclues', url: 'https://musiclues.space' },
+      { name: 'filmclues', url: 'https://filmclues.space' },
+      { name: 'litclues', url: 'https://litclues.space' },
+      { name: 'App store', url: 'https://apps.apple.com/app/xclues/id6760401987' },
+    ],
+  },
+  {
     id: 'missing-agent-2031',
     name: 'Missing Agent 2031',
     description:
@@ -35,18 +47,6 @@ export const projects: Project[] = [
       'A web app that aggregates registered demonstrations, protests, and rallies across Berlin on an interactive map. Features category filtering, date-based search, event detail popups, and multilingual support.',
     liveUrls: [{ name: 'view site', url: 'https://berlin-demo-finder.vercel.app/' }],
     githubUrl: 'https://github.com/blumaa/berlin-demo-finder',
-  },
-  {
-    id: 'xclues',
-    name: 'xClues games',
-    description:
-      'A connections-style puzzle game engine powering three domains (music, film, literature) from a single codebase. Features Zustand state management, TanStack Query caching, build-time SEO generation per domain, and the Mond Design System. Deployed as a PWA and native iOS app via Capacitor.',
-    liveUrls: [
-      { name: 'musiclues', url: 'https://musiclues.space' },
-      { name: 'filmclues', url: 'https://filmclues.space' },
-      { name: 'litclues', url: 'https://litclues.space' },
-      { name: 'App store', url: 'https://apps.apple.com/app/xclues/id6760401987' },
-    ],
   },
   {
     id: 'bird-poo',
