@@ -45,6 +45,7 @@ export const projects: Project[] = [
       { name: 'musiclues', url: 'https://musiclues.space' },
       { name: 'filmclues', url: 'https://filmclues.space' },
       { name: 'litclues', url: 'https://litclues.space' },
+      { name: 'App store', url: 'https://apps.apple.com/app/xclues/id6760401987' },
     ],
   },
   {
