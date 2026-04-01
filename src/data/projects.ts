@@ -1,8 +1,8 @@
 export type ProjectCategory = 'apps' | 'games' | 'animations' | 'systems'
 
 export const projectCategories: Record<ProjectCategory, string> = {
-  apps: 'Apps',
-  games: 'Games',
+  apps: 'Web Apps',
+  games: 'Game Apps',
   animations: 'Animations',
   systems: 'Systems & Tools',
 }

@@ -13,8 +13,8 @@ function renderPage() {
 describe('WorkPage', () => {
   it('renders category headings', () => {
     renderPage()
-    expect(screen.getByText('Apps')).toBeInTheDocument()
-    expect(screen.getByText('Games')).toBeInTheDocument()
+    expect(screen.getByText('Web Apps')).toBeInTheDocument()
+    expect(screen.getByText('Game Apps')).toBeInTheDocument()
     expect(screen.getByText('Animations')).toBeInTheDocument()
     expect(screen.getByText('Systems & Tools')).toBeInTheDocument()
   })
