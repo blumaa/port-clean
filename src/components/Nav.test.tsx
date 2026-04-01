@@ -1,22 +1,6 @@
-import { render, screen, fireEvent } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router'
 import { Nav } from './Nav'
-
-vi.mock('framer-motion', () => ({
-  motion: {
-    div: ({ children, ...props }: React.PropsWithChildren<Record<string, unknown>>) => {
-      const filtered: Record<string, unknown> = {}
-      for (const [key, value] of Object.entries(props)) {
-        if (!['initial', 'animate', 'exit', 'transition', 'whileHover', 'whileTap'].includes(key)) {
-          filtered[key] = value
-        }
-      }
-      return <div {...filtered}>{children}</div>
-    },
-  },
-  AnimatePresence: ({ children }: React.PropsWithChildren) => <>{children}</>,
-}))
 
 vi.mock('./animations/AnimatedOctoDude', () => ({
   AnimatedOctoDude: () => <div data-testid="animated-octodude">OctoDude</div>,
@@ -62,45 +46,16 @@ describe('Nav', () => {
 })
 
 describe('Nav - OctoDude', () => {
-  it('renders the octodude button in the nav', () => {
+  it('renders the octodude in the nav', () => {
     renderNav()
-    expect(screen.getByLabelText('Open OctoDude animation')).toBeInTheDocument()
+    expect(screen.getByLabelText('OctoDude')).toBeInTheDocument()
   })
 
   it('renders octodude before the nav links', () => {
     renderNav()
     const navLinks = screen.getByRole('list')
-    const octoButton = screen.getByLabelText('Open OctoDude animation')
+    const octoButton = screen.getByLabelText('OctoDude')
     const items = navLinks.querySelectorAll('li')
     expect(items[0]).toContainElement(octoButton)
-  })
-
-  it('opens fullscreen overlay when octodude is clicked', async () => {
-    const user = userEvent.setup()
-    renderNav()
-
-    await user.click(screen.getByLabelText('Open OctoDude animation'))
-    expect(screen.getByTestId('octo-overlay')).toBeInTheDocument()
-  })
-
-  it('closes overlay when backdrop is clicked', async () => {
-    const user = userEvent.setup()
-    renderNav()
-
-    await user.click(screen.getByLabelText('Open OctoDude animation'))
-    expect(screen.getByTestId('octo-overlay')).toBeInTheDocument()
-
-    await user.click(screen.getByTestId('octo-overlay'))
-    expect(screen.queryByTestId('octo-overlay')).not.toBeInTheDocument()
-  })
-
-  it('closes overlay when Escape key is pressed', async () => {
-    renderNav()
-
-    fireEvent.click(screen.getByLabelText('Open OctoDude animation'))
-    expect(screen.getByTestId('octo-overlay')).toBeInTheDocument()
-
-    fireEvent.keyDown(window, { key: 'Escape' })
-    expect(screen.queryByTestId('octo-overlay')).not.toBeInTheDocument()
   })
 })

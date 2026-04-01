@@ -85,7 +85,6 @@ export const experiences: Experience[] = [
     achievements: [
       "Helped over 1000 students learn English as a second language.",
       "Coordinated a team of 10 teachers.",
-      "Boosted cultural relevance using 21st century apps and technology.",
     ],
     link: "https://south.mpls.k12.mn.us/",
   },

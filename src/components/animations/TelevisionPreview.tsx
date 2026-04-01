@@ -1,38 +1,8 @@
-import { useState, type ComponentType } from 'react'
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { StaticEffect } from './StaticEffect'
-import { Lighthouse } from './Lighthouse'
-import { RustlingGrass } from './RustlingGrass'
-import { AnimatedMoon } from './AnimatedMoon'
-import { AnimatedEyeball } from './AnimatedEyeball'
-import { AnimatedEyeballWatching } from './AnimatedEyeballWatching'
-import { NoirCarChase } from './NoirCarChase'
-import { AlienMoon } from './AlienMoon'
-import { AnimatedLamp } from './AnimatedLamp'
-import { Bird } from './Bird'
-import { AnimatedLoadingAirplane } from './AnimatedLoadingAirplane'
-import { AnimatedOctoDude } from './AnimatedOctoDude'
-import { NuclearPhysics } from './NuclearPhysics'
-import { Bus } from './Bus'
-import { PadelPointBerlin } from './PadelPointBerlin'
+import { ANIMATIONS } from '../../data/animations'
 import styles from './TelevisionPreview.module.css'
-
-const ANIMATIONS: ComponentType[] = [
-  Lighthouse,
-  RustlingGrass,
-  AnimatedMoon,
-  AnimatedEyeball,
-  AnimatedEyeballWatching,
-  NoirCarChase,
-  AlienMoon,
-  AnimatedLamp,
-  Bird,
-  AnimatedLoadingAirplane,
-  AnimatedOctoDude,
-  NuclearPhysics,
-  Bus,
-  PadelPointBerlin,
-]
 
 function TelevisionPreview() {
   const [isPoweredOn, setIsPoweredOn] = useState(false)
@@ -69,7 +39,7 @@ function TelevisionPreview() {
     }, 500)
   }
 
-  const CurrentAnimation = ANIMATIONS[currentChannel]
+  const CurrentAnimation = ANIMATIONS[currentChannel].component
 
   return (
     <div className={styles.container}>

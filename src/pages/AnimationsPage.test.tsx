@@ -41,6 +41,9 @@ vi.mock('../components/animations/NuclearPhysics', () => ({
 vi.mock('../components/animations/NoirCarChase', () => ({
   NoirCarChase: () => <svg data-testid="car-chase" />,
 }))
+vi.mock('../components/animations/AnimatedMoon', () => ({
+  AnimatedMoon: () => <svg data-testid="moon" />,
+}))
 
 function renderPage() {
   return render(

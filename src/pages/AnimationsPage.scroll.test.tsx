@@ -22,6 +22,7 @@ vi.mock('../components/animations/AnimatedLoadingAirplane', () => ({ AnimatedLoa
 vi.mock('../components/animations/AnimatedOctoDude', () => ({ AnimatedOctoDude: () => <svg /> }))
 vi.mock('../components/animations/NuclearPhysics', () => ({ NuclearPhysics: () => <svg /> }))
 vi.mock('../components/animations/NoirCarChase', () => ({ NoirCarChase: () => <svg /> }))
+vi.mock('../components/animations/AnimatedMoon', () => ({ AnimatedMoon: () => <svg /> }))
 vi.mock('../components/animations/TelevisionPreview', () => ({ TelevisionPreview: () => <div>TV</div> }))
 
 describe('Scroll behavior on navigation', () => {
@@ -49,7 +50,7 @@ describe('Scroll behavior on navigation', () => {
 
     render(<RouterProvider router={router} />)
 
-    await user.click(screen.getByText('View Gallery'))
+    await user.click(screen.getByText('view gallery'))
 
     expect(screen.getByText('Animations')).toBeInTheDocument()
     expect(scrollToSpy).toHaveBeenCalledWith(0, 0)

@@ -33,33 +33,6 @@
   composes: imageFill;
   object-position: top left;
 }
-
-.sectionTitle {
-  font-family: var(--font-heading);
-  font-size: var(--text-3xl);
-  font-weight: var(--font-bold);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-8);
-  text-align: center;
-}
-
-@media (min-width: 768px) {
-  .sectionTitle {
-    font-size: var(--text-4xl);
-    text-align: left;
-  }
-}
-
-.sectionPadding {
-  padding: var(--space-16) 0;
-}
-
-@media (min-width: 768px) {
-  .sectionPadding {
-    padding: var(--space-24) 0;
-  }
-}
-
 .blinkingCursor {
   color: var(--color-accent);
   animation: blink 1s step-end infinite;

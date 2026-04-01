@@ -11,9 +11,12 @@ function renderPage() {
 }
 
 describe('WorkPage', () => {
-  it('renders the Work heading', () => {
+  it('renders category headings', () => {
     renderPage()
-    expect(screen.getByText('Work')).toBeInTheDocument()
+    expect(screen.getByText('Apps')).toBeInTheDocument()
+    expect(screen.getByText('Games')).toBeInTheDocument()
+    expect(screen.getByText('Animations')).toBeInTheDocument()
+    expect(screen.getByText('Systems & Tools')).toBeInTheDocument()
   })
 
   it('renders all project names', () => {
@@ -38,9 +41,9 @@ describe('WorkPage', () => {
     expect(link).toHaveAttribute('href', '/animations')
   })
 
-  it('renders View Gallery button for Animation Gallery', () => {
+  it('renders view gallery link for Animation Gallery', () => {
     renderPage()
-    const link = screen.getByText('View Gallery').closest('a')
+    const link = screen.getByText('view gallery').closest('a')
     expect(link).toHaveAttribute('href', '/animations')
   })
 
@@ -50,9 +53,9 @@ describe('WorkPage', () => {
     expect(link).toHaveAttribute('href', '/tv')
   })
 
-  it('renders View Television button for Television', () => {
+  it('renders watch television link for Television', () => {
     renderPage()
-    const link = screen.getByText('View Television').closest('a')
+    const link = screen.getByText('watch television').closest('a')
     expect(link).toHaveAttribute('href', '/tv')
   })
 
