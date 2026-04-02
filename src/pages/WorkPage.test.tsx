@@ -26,6 +26,7 @@ describe('WorkPage', () => {
     expect(screen.getByText('Mond Design System')).toBeInTheDocument()
     expect(screen.getByText('xClues games')).toBeInTheDocument()
     expect(screen.getByText('Bird Poo')).toBeInTheDocument()
+    expect(screen.getByText('Scrabblish')).toBeInTheDocument()
     expect(screen.getByText('Animation Gallery')).toBeInTheDocument()
     expect(screen.getByText('Retro Television')).toBeInTheDocument()
   })

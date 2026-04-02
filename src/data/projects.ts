@@ -63,6 +63,15 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/blumaa/berlin-demo-finder',
   },
   {
+    id: 'scrabblish',
+    name: 'Scrabblish',
+    category: 'games',
+    description:
+      'In an attempt to address board game monolingualism, Scrabblish is a word game for multi-lingual people and players. Built with React, GSAP, Supabase. Meant to be played as a PWA or iOS app. Features system notifications.',
+    liveUrls: [{ name: 'play', url: 'https://scrabblish.vercel.app/' }],
+    appStoreUrl: 'https://apps.apple.com/app/scrabblish/id6761420873',
+  },
+  {
     id: 'bird-poo',
     name: 'Bird Poo',
     category: 'games',
