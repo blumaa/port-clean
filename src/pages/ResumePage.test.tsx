@@ -11,6 +11,11 @@ function renderPage() {
 }
 
 describe('ResumePage', () => {
+  it('sets the page title', () => {
+    renderPage()
+    expect(document.title).toBe('CV | Aaron Blum')
+  })
+
   it('renders the Experience heading', () => {
     renderPage()
     expect(screen.getByText('Experience')).toBeInTheDocument()

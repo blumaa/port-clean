@@ -1,9 +1,30 @@
 import { Icon } from '../components/atoms/Icon'
 import { ExternalLink } from '../components/atoms/ExternalLink'
+import { PageMeta } from '../components/PageMeta'
 
 function HomePage() {
   return (
     <div className="home-bio">
+      <PageMeta
+        title="Aaron Blum — Frontend Developer in Berlin"
+        description="Aaron Blum is a frontend developer in Berlin specializing in design systems, React apps, and SVG animations."
+        path="/"
+      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Aaron Blum',
+        url: 'https://www.aaronblum.co',
+        jobTitle: 'Frontend Developer',
+        email: 'blumaa@gmail.com',
+        address: { '@type': 'PostalAddress', addressLocality: 'Berlin', addressCountry: 'DE' },
+        sameAs: [
+          'https://github.com/blumaa',
+          'https://www.linkedin.com/in/aaron-blum-0904/',
+        ],
+        knowsAbout: ['React', 'TypeScript', 'Design Systems', 'SVG Animation', 'GSAP', 'Frontend Development'],
+      }) }} />
+      <h1 className="home-h1">Aaron Blum</h1>
       <p>
         I'm a frontend developer who lives in that sweet spot between design and engineering. I build design systems, component libraries, web apps, and
         SVG animations— aiming to create products that are accessible, inviting, and engage the user.

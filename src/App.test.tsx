@@ -78,6 +78,11 @@ describe('App routing', () => {
 
   it('renders Nav on every page', () => {
     renderApp('/')
-    expect(screen.getByText('Aaron Blum')).toBeInTheDocument()
+    expect(screen.getByRole('navigation')).toBeInTheDocument()
+  })
+
+  it('renders the footer on every page', () => {
+    renderApp('/')
+    expect(screen.getByText(/© Aaron Blum 2026/)).toBeInTheDocument()
   })
 })

@@ -4,6 +4,7 @@ import { Icon } from '../components/atoms/Icon'
 import { SectionHeading } from '../components/atoms/SectionHeading'
 import { ExperienceEntry } from '../components/molecules/ExperienceEntry'
 import { ListEntry } from '../components/molecules/ListEntry'
+import { PageMeta } from '../components/PageMeta'
 
 function ResumePage() {
   const codingJobs = experiences.filter((e) => e.category === 'coding')
@@ -15,6 +16,11 @@ function ResumePage() {
 
   return (
     <>
+      <PageMeta
+        title="CV | Aaron Blum"
+        description="Frontend developer CV — experience at fluege.de, localyze, and more. Design systems, React, TypeScript."
+        path="/cv"
+      />
       <section>
         <SectionHeading>
           Experience

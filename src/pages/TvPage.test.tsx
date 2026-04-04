@@ -6,6 +6,11 @@ vi.mock('../components/animations/TelevisionPreview', () => ({
 }))
 
 describe('TvPage', () => {
+  it('sets the page title', () => {
+    render(<TvPage />)
+    expect(document.title).toBe('Retro Television | Aaron Blum')
+  })
+
   it('renders the TelevisionPreview', () => {
     render(<TvPage />)
     expect(screen.getByTestId('tv-preview')).toBeInTheDocument()

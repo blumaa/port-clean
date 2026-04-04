@@ -11,6 +11,11 @@ function renderPage() {
 }
 
 describe('WorkPage', () => {
+  it('sets the page title', () => {
+    renderPage()
+    expect(document.title).toBe('Projects | Aaron Blum')
+  })
+
   it('renders category headings', () => {
     renderPage()
     expect(screen.getByText('Web Apps')).toBeInTheDocument()

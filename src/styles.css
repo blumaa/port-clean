@@ -205,6 +205,12 @@ main {
   max-width: 42.5rem;
 }
 
+.home-h1 {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-4);
+}
+
 .home-bio p {
   font-size: var(--text-base);
   line-height: 1.75rem;
@@ -603,4 +609,17 @@ section > h2 {
     content: '\00B7';
     margin-right: var(--space-2);
   }
+}
+
+/* Footer */
+
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-8);
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

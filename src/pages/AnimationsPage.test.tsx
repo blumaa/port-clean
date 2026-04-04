@@ -54,6 +54,11 @@ function renderPage() {
 }
 
 describe('AnimationsPage', () => {
+  it('sets the page title', () => {
+    renderPage()
+    expect(document.title).toBe('SVG Animations | Aaron Blum')
+  })
+
   it('renders the Animations heading', () => {
     renderPage()
     expect(screen.getByText('Animations')).toBeInTheDocument()

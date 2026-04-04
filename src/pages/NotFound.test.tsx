@@ -3,6 +3,15 @@ import { MemoryRouter } from 'react-router'
 import { NotFound } from './NotFound'
 
 describe('NotFound', () => {
+  it('sets the page title', () => {
+    render(
+      <MemoryRouter>
+        <NotFound />
+      </MemoryRouter>,
+    )
+    expect(document.title).toBe('Page Not Found | Aaron Blum')
+  })
+
   it('renders page not found message', () => {
     render(
       <MemoryRouter>
