@@ -24,7 +24,6 @@ function HomePage() {
         ],
         knowsAbout: ['React', 'TypeScript', 'Design Systems', 'SVG Animation', 'GSAP', 'Frontend Development'],
       }) }} />
-      <h1 className="home-h1">Aaron Blum</h1>
       <p>
         I'm a frontend developer who lives in that sweet spot between design and engineering. I build design systems, component libraries, web apps, and
         SVG animations— aiming to create products that are accessible, inviting, and engage the user.

@@ -1,6 +1,7 @@
-export type ProjectCategory = 'apps' | 'games' | 'animations' | 'systems'
+export type ProjectCategory = 'ai' | 'apps' | 'games' | 'animations' | 'systems'
 
 export const projectCategories: Record<ProjectCategory, string> = {
+  ai: 'AI Tools and Apps',
   apps: 'Web Apps',
   games: 'Game Apps',
   animations: 'Animations',
@@ -21,6 +22,14 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: 'ai-agent-academy',
+    name: 'AI Agent Academy',
+    category: 'ai',
+    description:
+      'A CLI/MCP rubric-based evaluation tool for AI coding agents that measures quality across production-relevant dimensions like accessibility, performance, and architecture. Features dual-scoring between agent and human, negotiated disagreements, and automated coaching that updates agent configuration.',
+    githubUrl: 'https://github.com/blumaa/ai-agent-academy',
+  },
   {
     id: 'xclues',
     name: 'xClues games',

@@ -18,14 +18,26 @@ describe('WorkPage', () => {
 
   it('renders category headings', () => {
     renderPage()
-    expect(screen.getByText('Web Apps')).toBeInTheDocument()
-    expect(screen.getByText('Game Apps')).toBeInTheDocument()
-    expect(screen.getByText('Animations')).toBeInTheDocument()
-    expect(screen.getByText('Systems & Tools')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'AI Tools and Apps' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Web Apps' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Game Apps' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Animations' })).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Systems & Tools' })).toBeInTheDocument()
+  })
+
+  it('renders category nav with links to sections', () => {
+    renderPage()
+    const nav = screen.getByRole('navigation')
+    expect(nav).toBeInTheDocument()
+    const links = nav.querySelectorAll('a')
+    expect(links).toHaveLength(5)
+    expect(links[0]).toHaveAttribute('href', '#ai')
+    expect(links[1]).toHaveAttribute('href', '#apps')
   })
 
   it('renders all project names', () => {
     renderPage()
+    expect(screen.getByText('AI Agent Academy')).toBeInTheDocument()
     expect(screen.getByText('Padel Point Berlin')).toBeInTheDocument()
     expect(screen.getByText('Berlin Demo Finder')).toBeInTheDocument()
     expect(screen.getByText('Mond Design System')).toBeInTheDocument()
