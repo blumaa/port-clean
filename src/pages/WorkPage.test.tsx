@@ -38,6 +38,7 @@ describe('WorkPage', () => {
   it('renders all project names', () => {
     renderPage()
     expect(screen.getByText('AI Agent Academy')).toBeInTheDocument()
+    expect(screen.getByText('Colosseum AI')).toBeInTheDocument()
     expect(screen.getByText('Padel Point Berlin')).toBeInTheDocument()
     expect(screen.getByText('Berlin Demo Finder')).toBeInTheDocument()
     expect(screen.getByText('Mond Design System')).toBeInTheDocument()

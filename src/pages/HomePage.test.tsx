@@ -11,10 +11,9 @@ function renderPage() {
 }
 
 describe('HomePage', () => {
-  it('renders an H1 with the name', () => {
+  it('renders the bio section', () => {
     renderPage()
-    const h1 = screen.getByRole('heading', { level: 1 })
-    expect(h1).toHaveTextContent('Aaron Blum')
+    expect(screen.getByText(/design systems, component libraries/)).toBeInTheDocument()
   })
 
   it('renders JSON-LD Person schema', () => {

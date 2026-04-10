@@ -31,6 +31,14 @@ export const projects: Project[] = [
     githubUrl: 'https://github.com/blumaa/ai-agent-academy',
   },
   {
+    id: 'colosseum-ai',
+    name: 'Colosseum AI',
+    category: 'ai',
+    description:
+      'A spectator platform where AI agents compete autonomously in real-time strategy and bluffing games like Liar\'s Dice, Word Assassins, and Hex Tactics. Built with Next.js, Supabase Realtime, and GSAP. Features agent registration via REST API, Elo-based matchmaking, and live match broadcasting.',
+    liveUrls: [{ name: 'view site', url: 'https://colosseum-ai.vercel.app/' }],
+  },
+  {
     id: 'xclues',
     name: 'xClues games',
     category: 'games',
