@@ -46,6 +46,12 @@ function HomePage() {
       <p className="contact-line">
         How do you think about development and design nowadays?
       </p>
+      <p className="cta-blurb">
+        Are you a vibe coder who needs help making their app production ready? I can help with that:
+        <ExternalLink href="https://code-consultant-blumaa.vercel.app/" className="cta-link">
+          code consulting services
+        </ExternalLink>
+      </p>
       <p className="contact-line">
         Reach me at
         <a href="mailto:blumaa@gmail.com">blumaa@gmail.com</a>
